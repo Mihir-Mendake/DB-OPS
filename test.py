@@ -27,14 +27,14 @@ def data():
     conn.close()
 data()
 
-# def extract():
-#     conn = psycopg2.connect(dbname="postgres", user="postgres", password="Mihir@1907", host="localhost",port="5433" )
-#     cursor =conn.cursor()   
-#     cursor.execute('''select * from employees;''')
-#     print(cursor.fetchall())
-#     conn.commit()
-#     conn.close()
-# extract()
+def extract():
+    conn = psycopg2.connect(dbname="postgres", user="postgres", password="Mihir@1907", host="localhost",port="5433")
+    cursor = conn.cursor()
+    cursor.execute('''select * from employees;''')
+    print(cursor.fetchall())
+    conn.commit()
+    conn.close()
+extract()
 
 def update():
     conn = psycopg2.connect(dbname="postgres", user="postgres", password="Mihir@1907", host="localhost",port="5433" )
@@ -47,3 +47,4 @@ def update():
     print('Data updated Successfully')
     conn.commit()
     conn.close()
+update()
